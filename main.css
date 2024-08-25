@@ -1,5 +1,5 @@
 body{
-    background-color: blueviolet;
+    background-color: rgb(88, 29, 143);
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: rgb(0, 0, 0);
 }
@@ -7,18 +7,18 @@ body{
     text-align: center;
 }
 .count{
-    background-color: blue;
-    font-size: 125px;
+    background-color: rgb(241, 185, 213);
+    font-size: 50px;
     display: inline-block;
     border-radius: 10px;
 }
 .btn{
-    background-color: aquamarine;
+    background-color: rgb(250, 223, 237);
     font-size: 50px;
     margin: 150px 75px;
     display: inline-block;
     border-radius: 10px;
 }
 .btn:hover{
-    background-color: cadetblue;
+    background-color: rgb(231, 155, 164);
 }
