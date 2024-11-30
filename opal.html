@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Emoji Clicker</title>
+</head>
+<body>
+    <form action="https://survivor.fandom.com/wiki/Jeff_Probst" method="post" enctype="multipart/form-data" style="text-align: center;">
+        <label for="name">Name:</label>
+        <input  type="name" id="name" placeholder="Jeff"><br>
+        <input  type="reset"> <br>
+        <input type="submit">
+    </form>
+    <div class="main">
+    <button id="_btn" class="btn" onclick="clicked()" >Click❤️</button>
+    <button id="_btn" class="btn" onclick="clickaroo()" >Click🐈</button>
+    <button id="_btn" class="btn" onclick="clickapoo()" >Click🐶</button>
+    <button id="_btn" class="btn" onclick="clickaloo()" >Click🐔</button><br>
+
+    <span id="_count" class="count">N/A</span>
+    <br>
+
+    </div>
+    
+    <script defer>
+    clicks = "😊"
+    let x=0
+
+
+    document.getElementById("_count").innerHTML = clicks
+
+    function clicked(){
+        clicks= clicks+"❤️"
+        x+=1
+        /*
+        if (x>0) {
+            greeting = hi
+        }
+        */
+        document.getElementById("_count").innerHTML = clicks
+    }
+
+    function clickaroo(){
+        clicks= clicks+"🐈"
+        document.getElementById("_count").innerHTML = clicks
+    }
+    function clickaloo(){
+        clicks= clicks+"🐔"
+        document.getElementById("_count").innerHTML = clicks
+    }
+
+    function clickapoo(){
+        clicks= clicks+"🐶"
+        document.getElementById("_count").innerHTML = clicks
+    }
+    </script>
+</body>
+</html>
