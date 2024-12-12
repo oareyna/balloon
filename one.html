@@ -3,12 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title style="text-align: center;">Poetry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Poetry</title>
+    <style>
+        :root {
+            --background-color: #f4f4f8;
+            --text-primary: #2c3e50;
+            --text-secondary: #7f8c8d;
+            --accent-color: #6a5acd;
+            --line-color: #9932cc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Merriweather', serif;
+            line-height: 1.8;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .poetry-container {
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 3rem;
+        }
+
+        h1 {
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        p {
+            text-align: center;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--line-color), transparent);
+            margin: 1.5rem 0;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: 'Merriweather', serif;
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            color: var(--accent-color);
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid var(--line-color);
+            padding-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+
+            .poetry-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
-<body >
-    <h1>Poetry</h1><p>By: Olivia Reyna</p>
-    <hr>
-    <pre style="font-family: 'Times New Roman', Times, serif;">
+<body>
+    <div class="poetry-container">
+        <h1>Poetry</h1>
+        <p>By: Olivia Reyna</p>
+        <hr>
+        <pre>
         <h2>
         Two Seeds</h2>
 
@@ -90,7 +175,9 @@
         It stood upright as if it did no wrong
         As if it didn't take the light from the world
         As the next day came, the Buttercup  treated it like the day before was never there
+        
         <hr>
+            
         <h2>
         Another Quiver</h2>
 
@@ -148,8 +235,11 @@
         Of the essence of a phoenix
         A phoenix without its redemption  
         A phoenix with an end 
+            
+  
 
 
         </pre>
+    </div>
 </body>
 </html>
