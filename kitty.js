@@ -1,3 +1,4 @@
+
 // JS Logic Entry Point
 function startGame() {
     document.getElementById('cutscene').style.display = 'none';
