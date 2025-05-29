@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Reyna Articles</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Crimson Text', serif;
+            background-color: #fefefe;
+            color: #1a1a1a;
+        }
+        
+        .banner-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fefefe;
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .date-weather {
+            font-weight: 400;
+        }
+        
+        .edition-info {
+            font-style: italic;
+        }
+        
+        .main-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .masthead {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.8rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 50%, #1a1a1a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .masthead::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #c9a961, transparent);
+            border-radius: 2px;
+        }
+        
+        .masthead::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #c9a961, transparent);
+            border-radius: 1px;
+        }
+        
+        .tagline {
+            font-size: 15px;
+            font-style: italic;
+            color: #666;
+            font-weight: 400;
+            letter-spacing: 2.5px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            position: relative;
+        }
+        
+        .tagline::before,
+        .tagline::after {
+            content: '◊';
+            color: #c9a961;
+            margin: 0 15px;
+            font-size: 12px;
+        }
+        
+        .decorative-line {
+            width: 400px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #c9a961 20%, #1a1a1a 50%, #c9a961 80%, transparent 100%);
+            margin: 0 auto 20px;
+            position: relative;
+        }
+        
+        .decorative-line::before,
+        .decorative-line::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            width: 8px;
+            height: 8px;
+            background: #c9a961;
+            border-radius: 50%;
+            transform: rotate(45deg);
+        }
+        
+        .decorative-line::before {
+            left: 30%;
+        }
+        
+        .decorative-line::after {
+            right: 30%;
+        }
+        
+        .nav-section {
+            border-top: 2px solid #1a1a1a;
+            border-bottom: 1px solid #ccc;
+            padding: 12px 0;
+            text-align: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-link {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #1a1a1a;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #c9a961;
+            background-color: rgba(201, 169, 97, 0.1);
+        }
+        
+        .breaking-ticker {
+            background: linear-gradient(135deg, #c41e3a, #a91b32);
+            color: white;
+            padding: 8px 0;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .breaking-text {
+            animation: scroll-left 30s linear infinite;
+            white-space: nowrap;
+        }
+        
+        @keyframes scroll-left {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        @media (max-width: 768px) {
+            .masthead {
+                font-size: 3rem;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+            
+            .nav-link {
+                font-size: 11px;
+            }
+            
+            .header-top {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .masthead {
+                font-size: 2.5rem;
+            }
+            
+            .decorative-line {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner-container">
+        <div class="header-top">
+            <div class="date-weather" id="current-date">
+            </div>
+            <div class="edition-info">
+                Digital Edition • Est. 2025
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <h1 class="masthead">The Reyna Articles</h1>
+            <!-- <p class="tagline">Truth Through Excellence in Journalism</p> -->
+            <div class="decorative-line"></div>
+        </div>
+        
+        <nav class="nav-section">
+            <div class="nav-links">
+            </div>
+        </nav>
+    </div>
+    
+    <script>
+        // Update the date dynamically
+        function updateDate() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            };
+            const dateString = now.toLocaleDateString('en-US', options);
+            document.getElementById('current-date').textContent = dateString;
+        }
+        
+        // Update date when page loads
+        updateDate();
+        
+        // Update date every minute to ensure accuracy
+        setInterval(updateDate, 60000);
+    </script>
+</body>
+</html>
