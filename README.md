@@ -1,0 +1,1 @@
+Through my google pages you will see my website in which it has three tabs. The first tab says "My Life" in which I coded a project using html and js to make funny scenes of my life. The second tab has my poetry and the 3rd tab had a vibe code game a create about creating a kitty tycoon.
