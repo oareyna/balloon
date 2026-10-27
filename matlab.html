@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastermind | My Projects</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #fffaf7;
+            color: #263d35;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 95px 25px 70px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(55px, 9vw, 88px);
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin: 0 0 18px;
+        }
+
+        .subtitle {
+            color: #806e68;
+            font-size: 22px;
+            line-height: 1.7;
+            margin-bottom: 45px;
+        }
+
+        .game-display {
+            font-size: 45px;
+            letter-spacing: 12px;
+            background: #fff0f0;
+            border-radius: 25px;
+            padding: 30px 15px;
+            margin: 0 auto 55px;
+            max-width: 440px;
+        }
+
+        h2 {
+            font-size: 26px;
+            margin: 42px 0 15px;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.9;
+            color: #645d59;
+        }
+
+        .instructions {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .peg {
+            font-weight: 600;
+            color: #263d35;
+        }
+
+        .divider {
+            width: 65px;
+            height: 3px;
+            background: #e6b1bb;
+            border-radius: 10px;
+            margin: 55px auto;
+        }
+
+        /* Download button */
+
+        .download-button {
+            display: inline-block;
+            margin-top: 18px;
+            background: #263d35;
+            color: white;
+            padding: 18px 38px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .download-button:hover {
+            background: #405c50;
+            transform: translateY(-3px);
+        }
+
+        .note {
+            font-size: 13px;
+            color: #8a7770;
+            margin-top: 18px;
+        }
+
+        /* Download instructions */
+
+        .download-guide {
+            max-width: 780px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .download-guide > h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .guide-intro {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .download-step {
+            margin-bottom: 65px;
+        }
+
+        .download-step h3 {
+            font-size: 23px;
+            font-weight: 700;
+            color: #263d35;
+            margin-bottom: 12px;
+        }
+
+        .step-number {
+            color: #bf8393;
+            margin-right: 8px;
+        }
+
+        .download-step p {
+            margin: 0 0 23px;
+        }
+
+        .download-step img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(39, 61, 53, 0.09);
+        }
+
+        .download-step img.small-image {
+            max-width: 530px;
+            margin: 0 auto;
+        }
+
+        .final-message {
+            text-align: center;
+            margin: 45px auto 0;
+            font-size: 19px;
+            font-weight: 600;
+            color: #263d35;
+        }
+
+        footer {
+            margin-top: 70px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #263d35;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                padding: 65px 20px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+            }
+
+            .game-display {
+                font-size: 30px;
+                letter-spacing: 5px;
+            }
+
+            .download-step h3 {
+                font-size: 20px;
+            }
+
+            .download-step {
+                margin-bottom: 45px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+
+        <!-- TITLE -->
+
+        <h1>Mastermind</h1>
+
+        <p class="subtitle">
+            Try your best to crack the code!!! YOU DO NEED MATLAB INSTALLED!!!
+        </p>
+
+        <div class="game-display">
+            🔴 🟡 🟢 🔵
+        </div>
+
+        <!-- ABOUT THE GAME -->
+
+        <h2>What is Mastermind?</h2>
+
+        <p>
+            Mastermind is a code-breaking game I programmed
+            using MATLAB. Your goal is to discover a secret
+            combination of four colors in just 10 guesses.
+            You might have to be a MASTERMIND in order
+            to win!!!
+        </p>
+
+        <div class="divider"></div>
+
+        <!-- HOW TO PLAY -->
+
+        <h2>How to Play</h2>
+
+        <div class="instructions">
+
+            <p>
+                Enter four color letters to make your guess.
+                After each attempt, you'll receive clues
+                (black and white pegs, which aren't ordered)
+                to help you figure out the secret code.
+            </p>
+
+            <p>
+                <span class="peg">⚫ Black peg:</span>
+                Correct color in the correct position.
+            </p>
+
+            <p>
+                <span class="peg">⚪ White peg:</span>
+                Correct color in the wrong position.
+            </p>
+
+            <p>
+                Use these clues to crack the code before
+                you run out of guesses!
+            </p>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- DOWNLOAD -->
+
+        <h2>Ready to Play?</h2>
+
+        <p>
+            Download the game, extract the ZIP file,
+            and double-click
+            <strong>PlayMastermind.bat</strong>
+            to get started!
+        </p>
+
+        <a href="mastermindGame.zip"
+           class="download-button"
+           download>
+            Download Mastermind ♡
+        </a>
+
+        <p class="note">
+            Requires MATLAB installed on Windows.
+        </p>
+
+        <div class="divider"></div>
+
+        <!-- DOWNLOAD GUIDE -->
+
+        <section class="download-guide">
+
+            <h2>How to Download & Play</h2>
+
+            <p class="guide-intro">
+                Not sure how to get started?
+                Follow these six simple steps!
+            </p>
+
+            <!-- STEP 1 -->
+
+            <div class="download-step">
+
+                <h3>
+                    <span class="step-number">01.</span>
+                    Download Mastermind
+                </h3>
+
+                <p>
+                    Click the
+                    <strong>Download Mastermind</strong>
+                    button above to download the game.
+                </p>
+
+                <img src="images/step1.png"
+                     alt="Clicking the Download Mastermind button">
+
+            </div>
+
+            <!-- STEP 2 -->
+
+            <div class="download-step">
+
+                <h3>
+                    <span class="step-number">02.</span>
+                    Go to the Downloads Folder
+                </h3>
+
+                <p>
+                    Once the download is complete, click
+                    the downloads icon in the top-right
+                    corner of your browser.
+                </p>
+
+                <p>
+                    Find <strong>mastermindGame.zip</strong>
+                    and click the
+                    <strong>folder icon (Show in folder)</strong>.
+                    This will open File Explorer and take
+                    you to the downloaded ZIP file.
+                </p>
+
+                <img src="images/step2.png"
+                     alt="Opening the Downloads folder from Chrome">
+
+            </div>
+
+            <!-- STEP 3 -->
+
+            <div class="download-step">
+
+                <h3>
+                    <span class="step-number">03.</span>
+                    Extract the ZIP File
+                </h3>
+
+                <p>
+                    In File Explorer, select
+                    <strong>mastermindGame.zip</strong>
+                    and click <strong>Extract all</strong>.
+                </p>
+
+                <p>
+                    Follow the extraction prompts and
+                    open the newly extracted folder.
+                    Keep all the game files together.
+                </p>
+
+                <img src="images/step3.png"
+                     alt="Extracting the Mastermind ZIP file">
+
+            </div>
+
+            <!-- STEP 4 -->
+
+            <div class="download-step">
+
+                <h3>
+                    <span class="step-number">04.</span>
+                    Launch the Game
+                </h3>
+
+                <p>
+                    Inside the extracted folder, locate
+                    <strong>PlayMastermind.bat</strong>.
+                </p>
+
+                <p>
+                    Double-click this file to launch
+                    Mastermind using MATLAB.
+                </p>
+
+                <img src="images/step4.png"
+                     alt="Double-clicking PlayMastermind.bat">
+
+            </div>
+
+            <!-- STEP 5 -->
+
+            <div class="download-step">
+
+                <h3>
+                    <span class="step-number">05.</span>
+                    Allow the Launcher to Run
+                </h3>
+
+                <p>
+                    Windows may display a warning because
+                    the launcher does not have a verified
+                    publisher.
+                </p>
+
+                <p>
+                    If you trust the downloaded files,
+                    click <strong>Run</strong>
+                    to continue.
+                </p>
+
+                <img src="images/step5.png"
+                     class="small-image"
+                     alt="Windows security warning for PlayMastermind.bat">
+
+            </div>
+
+            <!-- STEP 6 -->
+
+            <div class="download-step">
+
+                <h3>
+                    <span class="step-number">06.</span>
+                    Start Playing!
+                </h3>
+
+                <p>
+                    MATLAB will open two windows:
+                    the <strong>Figure window</strong>,
+                    which displays the Mastermind board,
+                    and the <strong>Command Window</strong>,
+                    where you'll enter your guesses.
+                </p>
+
+                <p>
+                    Follow the instructions in the
+                    Command Window and watch your board
+                    update with each guess!
+                </p>
+
+                <img src="images/step6.png"
+                     alt="Mastermind running in MATLAB">
+
+            </div>
+
+        </section>
+
+        <p class="final-message">
+            Good luck, and have fun cracking the code! ♡
+        </p>
+
+        <!-- FOOTER -->
+
+        <footer>
+            <a href="index.html">← Back to Home</a>
+        </footer>
+
+    </main>
+</body>
+</html>
